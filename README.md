@@ -1,3 +1,5 @@
+---
+
 # HateSpeechDetect-text
 
 ## **Project Overview**
@@ -43,6 +45,13 @@ In this project, I focused on benchmarking various machine learning models, deep
    - Improved the best-performing model’s accuracy by **25%** through advanced fine-tuning and hyperparameter optimization.
    - Achieved consistent performance with BERT-based models, maintaining **91% accuracy** across multiple datasets.
 
+7. **Best Performing Model:**
+   - After rigorous benchmarking, **DistilBERT** emerged as the top-performing model, achieving a balanced performance with **91% accuracy**. 
+   - The fine-tuned DistilBERT model has been pushed to the [datafreak/hatespeech-distill-bert](https://huggingface.co/datafreak/hatespeech-distill-bert) repository.
+
+8. **FastAPI App:**
+   - The FastAPI application serving the model has been **dockerized** to make it easily deployable and scalable.
+
 ## **Benchmarking Results**
 
 | **Model**                     | **Accuracy** | **Precision (Macro)** | **Recall (Macro)** | **F1 (Macro)** | **Precision (Weighted)** | **Recall (Weighted)** | **F1 (Weighted)** |
@@ -73,5 +82,54 @@ In this project, I focused on benchmarking various machine learning models, deep
 
 ## **Results**
 The project demonstrated the superior performance of BERT-based models, particularly after applying QLoRA-based fine-tuning on Phi-2, which outperformed traditional machine learning and standard deep learning models across all key metrics. Random Forest and XGBoost were the top-performing ML models, while GRU showed the best results among deep learning approaches.
+
+---
+
+## **How to Use the API Locally**
+To run the **FastAPI app** locally and test the **DistilBERT** model for hate speech detection, follow the instructions below:
+
+### **1. Clone the Repository**
+Clone the repository containing the FastAPI application and model files.
+
+```bash
+git clone https://github.com/datafreak/hatespeech-distill-bert.git
+cd hatespeech-distill-bert
+```
+
+### **2. Install Dependencies**
+Ensure you have Python 3.10+ installed and set up a virtual environment (recommended).
+
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+pip install -r requirements.txt
+```
+
+### **3. Run the Docker Container (Optional)**
+To run the API using Docker, you can use the following commands. Make sure you’ve built the Docker image before.
+
+```bash
+docker build -t hatespeech-api .
+docker run -p 8000:8000 hatespeech-api
+```
+
+This will start the FastAPI app and expose it on port `8000`.
+
+### **4. Access the API**
+Once the container is running, you can access the API via the following endpoint in your browser or Postman:
+
+```
+http://127.0.0.1:8000
+```
+
+To test the API, send a **POST request** to `http://127.0.0.1:8000/predict/` with the following body format:
+
+```json
+{
+  "text": "Your tweet or text here"
+}
+```
+
+This will return a prediction of whether the text is hate speech/offensive language or not.
 
 ---
