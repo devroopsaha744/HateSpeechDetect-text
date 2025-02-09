@@ -154,3 +154,9 @@ You can also access the **deployed API** on Hugging Face Spaces:
 https://datafreak-hatespeech-detect.hf.space
 ```
 
+## **Screenshots**  
+ 
+![img-1](examples/img-1.png)   
+![img-2](examples/img-2.png)  
+![img-3](examples/img-3.png)  
+
