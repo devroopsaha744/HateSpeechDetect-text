@@ -92,8 +92,8 @@ To run the **FastAPI app** locally and test the **DistilBERT** model for hate sp
 Clone the repository containing the FastAPI application and model files.
 
 ```bash
-git clone https://github.com/datafreak/hatespeech-distill-bert.git
-cd hatespeech-distill-bert
+git clone https://github.com/devroopsaha744/HateSpeecDetect-text.git
+cd HateSpeecDetect-text
 ```
 
 ### **2. Install Dependencies**
