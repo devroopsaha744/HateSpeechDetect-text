@@ -121,20 +121,36 @@ Once the container is running, you can access the API via the following endpoint
 ```
 http://127.0.0.1:8000
 ```
+## **API Endpoints**
 
-OR you can directly make use of the endpoint deployed on HuggingFace spaces:
+### **1. GET `/`**
+- **Description**: Health check endpoint to verify if the API is running.  
+- **Response**:
+  ```json
+  {
+    "Hello": "World!"
+  }
+  ```
+
+### **2. POST `/predict/`**
+- **Description**: Predict whether the provided text is hate speech or not.
+- **Body**:  
+  ```json
+  {
+    "text": "Your tweet or text here"
+  }
+  ```
+- **Response**:
+  ```json
+  {
+    "prediction": "hate_speech" | "Offensive language" | "NOT hate_speech",
+  }
+  ```
+  This will return a prediction of whether the text is hate speech/offensive language or not.
+
+You can also access the **deployed API** on Hugging Face Spaces:  
+
 ```
 https://datafreak-hatespeech-detect.hf.space
 ```
 
-To test the API, send a **POST request** to `http://127.0.0.1:8000/predict/`  or `https://datafreak-hatespeech-detect.hf.space/predict/` with the following body format:
-
-```json
-{
-  "text": "Your tweet or text here"
-}
-```
-
-This will return a prediction of whether the text is hate speech/offensive language or not.
-
----
