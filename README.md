@@ -122,7 +122,12 @@ Once the container is running, you can access the API via the following endpoint
 http://127.0.0.1:8000
 ```
 
-To test the API, send a **POST request** to `http://127.0.0.1:8000/predict/` with the following body format:
+OR you can directly make use of the endpoint deployed on HuggingFace spaces:
+```
+https://datafreak-hatespeech-detect.hf.space
+```
+
+To test the API, send a **POST request** to `http://127.0.0.1:8000/predict/`  or `https://datafreak-hatespeech-detect.hf.space/predict/` with the following body format:
 
 ```json
 {
