@@ -143,7 +143,7 @@ http://127.0.0.1:8000
 - **Response**:
   ```json
   {
-    "prediction": "hate_speech" | "Offensive language" | "NOT hate_speech",
+    "prediction": "hate_speech" | "Offensive_language" | "NOT_hate_speech",
   }
   ```
   This will return a prediction of whether the text is hate speech/offensive language or not.
