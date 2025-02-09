@@ -137,16 +137,16 @@ http://127.0.0.1:8000
 - **Body**:  
   ```json
   {
-    "text": "Your tweet or text here"
+    "text": "shut the fuck up, you asshole!"
   }
   ```
 - **Response**:
   ```json
   {
-    "prediction": "hate_speech" | "Offensive_language" | "NOT_hate_speech",
+    "prediction": "Offensive Language",
   }
   ```
-  This will return a prediction of whether the text is hate speech/offensive language or not.
+  This will return a prediction of whether the text is hate speech, offensive language or neither.
 
 You can also access the **deployed API** on Hugging Face Spaces:  
 
